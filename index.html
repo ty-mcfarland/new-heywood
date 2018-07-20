@@ -2,22 +2,53 @@
 <html>
     <title>Dr. Peter Heywood</title>
     <head>
+        <base href="index.html">
         <meta name="description" content="Dr. Heywood is a licensed psychologist who maintains a private practice in West
         Palm Beach,Florida specializing in the treatment of anxiety, mood, and
         interpersonal disorders with adults and children."/>
         <meta name="robots" content="index, follow"/>
 
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+        <script src="main.js"></script>
     </head>
     <body>
         <main class="container">
-            <header></header>
+            <header>
+                <div class="profile-photo"></div>
+                <div class="profile-introduction">
+                    <p>Peter G Heywood, PhD</p>
+                    <p>580 Village Blvd #370, West Palm Beach, FL 33409</p>
+                </div>
+            </header>
             <nav>
                 <div id="nav-items-container">
-                    <a href="/about.html" class="nav-1">About</a>
-                    <a class="nav-2">Background</a>
-                    <a class="nav-3">Services</a>
-                    <a class="nav-4">Contact</a>
+                    <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <a href="about.html">About</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="background.html">Background</a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="services.html">Services</a>
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <!-- <div class="swiper-pagination"></div> -->
+                    
+                        <!-- If we need navigation buttons -->
+                        <!-- <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div> -->
+                    
+                        <!-- If we need scrollbar -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
                 </div>
             </nav>
             <section>
@@ -26,5 +57,29 @@
             </section>
             <footer></footer>
         </main>
+        <script>
+                var mySwiper = new Swiper ('.swiper-container', {
+                    // Optional parameters
+                    direction: 'horizontal',
+                    loop: false,
+                    watchOverflow: true,
+                    slidesPerView: 2,
+                    // If we need pagination
+                    pagination: {
+                    el: '.swiper-pagination',
+                    },
+
+                    // Navigation arrows
+                    //   navigation: {
+                    //     nextEl: '.swiper-button-next',
+                    //     prevEl: '.swiper-button-prev',
+                    //   },
+
+                    // And if we need scrollbar
+                    scrollbar: {
+                    el: '.swiper-scrollbar',
+                    },
+                })
+                </script>
     </body>
 </html>
