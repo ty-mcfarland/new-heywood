@@ -1,5 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+
+<!-- <main>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav>
+        <p>TEST</p>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <header>
+            <i id="menu-button" (click)="toggleMenu($event)" class="material-icons">menu</i>
+        </header>
+        <nav></nav>
+        <section></section>
+        <footer></footer>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+</main> -->
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of navItems" (click)="changeRoute(item.route)">
+        {{ item.displayName }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <header>
+      <i id="menu-button" (click)="toggleMenu($event)" class="material-icons">menu</i>
+    </header>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+    <footer></footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,6 +52,6 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
-<router-outlet></router-outlet>
+
