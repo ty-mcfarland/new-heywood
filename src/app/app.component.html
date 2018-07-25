@@ -17,7 +17,8 @@
 </main> -->
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
+  <mat-sidenav #sidenav
+  [(opened)]="isSidenavOpen">
     <mat-nav-list>
       <mat-list-item *ngFor="let item of navItems" (click)="changeRoute(item.route)">
         {{ item.displayName }}
@@ -25,13 +26,13 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <header>
-      <i id="menu-button" (click)="toggleMenu($event)" class="material-icons">menu</i>
+    <header class="z-depth-1">
+      <i id="menu-button" (click)="isSidenavOpen = true;" class="material-icons">menu</i>
     </header>
     <section>
       <router-outlet></router-outlet>
     </section>
-    <footer></footer>
+    <footer class="z-depth-1"></footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
