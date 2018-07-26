@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
 
   mat-sidenav-container {
     height: 100%;
@@ -19,7 +19,7 @@
       min-height: 0;
       overflow-x: hidden;
       overflow-y: auto;
-      padding: 15px;
+      margin: 15px;
     }
     section::after {
       content: "";
@@ -46,10 +46,10 @@
     }
     mat-sidenav {
       display: grid;
+      background-color: orange;
       grid-template-rows: 2fr 1fr;
       grid-template-columns: 1fr;
       grid-template-areas:
-        '.'
         'nav-list';
 
         mat-nav-list {
@@ -68,6 +68,103 @@
           'header'
           'section'
           'footer';
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and(min-width: 600px) and (max-width: 812px) {
+
+  mat-sidenav-container {
+    height: 100%;
+
+    #menu-button {
+      font-size: 40px;
+      text-indent: 10px;
+      padding-top: 5px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: orange;
+      display: none;
+    }
+    section {
+      grid-area: section;
+      min-width: 0;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      margin: 15px;
+    }
+    section::after {
+      content: "";
+      background: url('../assets/background.jpg');
+      opacity: 0.25;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      z-index: -1;
+      background-size: 100% 100%;
+    }
+    footer {
+      grid-area: footer;
+      background-color: orange;
+      font-size: 14px;
+      padding: 15px;
+      line-height: 5px;
+
+      p {
+        text-align: left;
+      }
+    }
+    mat-sidenav {
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      display: grid;
+      background-color: orange;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        '.'
+        'nav-list'
+        '.';
+
+        mat-nav-list {
+          grid-area: nav-list;
+        }
+    }
+
+    mat-sidenav-content {
+      .sidenav-content-container {
+        height: 100%;
+
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 117px auto;
+        grid-template-areas:
+          'section section';
       }
     }
   }

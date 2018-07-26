@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   .section-content-container {
     font-size: 15px;
 
@@ -22,21 +22,39 @@
     }
   }
 }
-// .top-section {
-//   grid-area: top-section;
-// }
-// .middle-section {
-//   grid-area: middle-section;
-// }
 
-// .bottom-section {
-//   grid-area: bottom-section;
-// }
 
-// .section-content-container {
-//   // display: grid;
-//   // grid-template-areas:
-//   //   'top-section'
-//   //   'middle-section'
-//   //   'bottom-section'
-// }
+
+
+
+
+
+
+
+
+
+
+@media only screen and(min-width: 600px) and (max-width: 812px) {
+  .section-content-container {
+    font-size: 15px;
+
+    .top-section {
+      .hero-image {
+        width: 40%;
+      }
+    }
+
+    .bottom-section {
+      #signature {
+        line-height: 5px;
+        padding-top: 5px;
+        border-top: solid 1px orange;
+
+        p:first-child {
+          font-weight: 700;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

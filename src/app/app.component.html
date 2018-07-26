@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-sidenav-container>
   <mat-sidenav #sidenav
+  [mode]="sidenavMode"
   [(opened)]="isSidenavOpen">
     <mat-nav-list>
       <mat-list-item *ngFor="let item of navItems" (click)="changeRoute(item.route)">
@@ -16,7 +17,7 @@
       <section>
         <router-outlet></router-outlet>
       </section>
-      <footer class="z-depth-1">
+      <footer *ngIf="sidenavMode === 'over'" class="z-depth-1">
         <p>
           580 Village Blvd, West Palm Beach, FL 33409
         </p>

@@ -1,4 +1,24 @@
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
+  .services-container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    height: 100%;
+    margin-top: -10px;
+
+    .service-card {
+      margin-top: 15px;
+
+      mat-card-title {
+        font-size: 19px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+
+
+@media only screen and(min-width: 600px) and (max-width: 812px) {
   .services-container {
     display: grid;
     grid-template-rows: repeat(4, 1fr);

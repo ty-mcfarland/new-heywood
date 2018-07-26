@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
-// import { MatButton } from '@angular/material/button';
+import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 import { MatSidenav } from '@angular/material/sidenav';
 
 import { NavItem } from './app.types';
@@ -51,10 +51,25 @@ export class AppComponent implements OnDestroy, OnInit {
   ];
 
   isSidenavOpen = false;
+  watcher: Subscription = new Subscription();
+  activeMediaQuery = '';
+  sidenavMode = 'over';
 
   constructor(
+    public media: ObservableMedia,
     private readonly router: Router
-  ) {}
+  ) {
+    this.watcher = media
+      .subscribe((change: MediaChange) => {
+        if (change.mqAlias !== 'xs') {
+          this.sidenavMode = 'side';
+          this.isSidenavOpen = true;
+        } else {
+          this.sidenavMode = 'over';
+          this.isSidenavOpen = false;
+        }
+      });
+  }
 
   ngOnInit() {}
 
@@ -64,7 +79,9 @@ export class AppComponent implements OnDestroy, OnInit {
     this.router.navigateByUrl(path)
       .then(
         () => {
-          this.isSidenavOpen = false;
+          if (this.sidenavMode !== 'side') {
+            this.isSidenavOpen = false;
+          }
         }
       );
   }
