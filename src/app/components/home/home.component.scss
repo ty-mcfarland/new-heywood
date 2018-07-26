@@ -1,0 +1,22 @@
+@media (max-width: 600px) {
+  #profile-photo {
+    width: 120px;
+    height: 160px;
+  }
+
+  .section-content-container {
+    font-size: 15px;
+    .bottom-section {
+      #signature {
+        line-height: 5px;
+        padding-top: 5px;
+        border-top: solid 1px orange;
+
+        p:first-child {
+          font-weight: 700;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}

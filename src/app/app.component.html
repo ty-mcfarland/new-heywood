@@ -1,21 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
-<!-- <main>
-    <mat-sidenav-container>
-      <mat-sidenav #sidenav>
-        <p>TEST</p>
-      </mat-sidenav>
-      <mat-sidenav-content>
-        <header>
-            <i id="menu-button" (click)="toggleMenu($event)" class="material-icons">menu</i>
-        </header>
-        <nav></nav>
-        <section></section>
-        <footer></footer>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-</main> -->
-
 <mat-sidenav-container>
   <mat-sidenav #sidenav
   [(opened)]="isSidenavOpen">
@@ -26,13 +9,22 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <header class="z-depth-1">
-      <i id="menu-button" (click)="isSidenavOpen = true;" class="material-icons">menu</i>
-    </header>
-    <section>
-      <router-outlet></router-outlet>
-    </section>
-    <footer class="z-depth-1"></footer>
+    <div class="sidenav-content-container">
+      <header class="z-depth-1">
+        <i id="menu-button" (click)="isSidenavOpen = true;" class="material-icons">menu</i>
+      </header>
+      <section>
+        <router-outlet></router-outlet>
+      </section>
+      <footer class="z-depth-1">
+        <p>
+          580 Village Blvd, West Palm Beach, FL 33409
+        </p>
+        <p>
+          (561) 712-1119
+        </p>
+      </footer>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
