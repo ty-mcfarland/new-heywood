@@ -1,3 +1,6 @@
+import { GroupPsychotherapyComponent } from './components/services/service/group-psychotherapy/group-psychotherapy.component';
+import { RelationshipTherapyComponent } from './components/services/service/relationship-therapy/relationship-therapy.component';
+import { IndividualPsychotherapyComponent } from './components/services/service/individual-psychotherapy/individual-psychotherapy.component';
 import { LocationComponent } from './components/location/location.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BackgroundComponent } from './components/background/background.component';
@@ -7,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ServicesComponent } from './components/services/services.component';
+import { InitialEvaluationComponent } from './components/services/service/initial-evaluation/initial-evaluation.component';
 
 const routes: Routes = [
   {
@@ -31,7 +35,23 @@ const routes: Routes = [
   },
   {
     path: 'services',
-    component: ServicesComponent
+    component: ServicesComponent,
+  },
+  {
+    path: 'services/evaluation',
+    component: InitialEvaluationComponent
+  },
+  {
+    path: 'services/psychotherapy',
+    component: IndividualPsychotherapyComponent
+  },
+  {
+    path: 'services/relationship',
+    component: RelationshipTherapyComponent
+  },
+  {
+    path: 'services/group',
+    component: GroupPsychotherapyComponent
   },
   {
     path: '**',

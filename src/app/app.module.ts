@@ -16,6 +16,10 @@ import { BackgroundComponent } from './components/background/background.componen
 import { ServicesComponent } from './components/services/services.component';
 import { LocationComponent } from './components/location/location.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { InitialEvaluationComponent } from './components/services/service/initial-evaluation/initial-evaluation.component';
+import { IndividualPsychotherapyComponent } from './components/services/service/individual-psychotherapy/individual-psychotherapy.component';
+import { RelationshipTherapyComponent } from './components/services/service/relationship-therapy/relationship-therapy.component';
+import { GroupPsychotherapyComponent } from './components/services/service/group-psychotherapy/group-psychotherapy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,11 @@ import { ContactComponent } from './components/contact/contact.component';
     BackgroundComponent,
     ServicesComponent,
     LocationComponent,
-    ContactComponent
+    ContactComponent,
+    InitialEvaluationComponent,
+    IndividualPsychotherapyComponent,
+    RelationshipTherapyComponent,
+    GroupPsychotherapyComponent
   ],
   imports: [
     BrowserModule,
