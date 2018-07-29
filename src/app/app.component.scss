@@ -169,3 +169,62 @@
     }
   }
 }
+
+
+@media only screen and(min-width: 823px) {
+
+  header {
+    display: none;
+  }
+
+  mat-sidenav {
+    grid-area: side-nav;
+    background-color: orange;
+    width: 100%;
+  }
+  mat-sidenav-content {
+    grid-area: side-nav-content;
+    margin-left: 0!important;
+
+    .sidenav-content-container {
+      height: 100%;
+
+      section {
+        height: 100%;
+      }
+    }
+  }
+  mat-sidenav-container {
+    display: grid;
+    grid-template-columns: .2fr auto .2fr;
+    grid-template-rows: 50px  auto;
+    height: 100%;
+    grid-template-areas:
+      'side-nav side-nav side-nav'
+      '. side-nav-content .';
+
+      mat-nav-list {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 0.05fr);
+        padding-top: 0;
+        justify-content: center;
+
+        mat-list-item {
+          font-size: 12px;
+        }
+      }
+  }
+  mat-sidenav-container::after {
+    content: "";
+    background: url('../assets/background.jpg');
+    opacity: 0.25;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-size: contain;
+  }
+}

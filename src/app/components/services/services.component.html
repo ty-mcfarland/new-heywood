@@ -1,9 +1,19 @@
 <div class="services-container">
-  <mat-card
-  *ngFor="let service of services"
-  class="service-card"
+  <div class="services-header">
+    <h3>
+      Services
+    </h3>
+    <p>
+      Below is a list of services I offer, please explore each service as you feel it pertains to your
+      situation and/or interest.
+    </p>
+  </div>
+  <div *ngFor="let service of services; let i = index;"
+  class="service-card-{{i}} service-card"
   (click)="navigateToService(service.path)">
+  <mat-card>
     <mat-card-title>{{service.title}}</mat-card-title>
     <mat-card-content>{{service.description}}</mat-card-content>
   </mat-card>
+  </div>
 </div>
