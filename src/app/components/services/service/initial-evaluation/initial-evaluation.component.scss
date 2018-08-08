@@ -4,6 +4,39 @@
 
     .top-section {
       .hero-image {
+        width: 40%;
+      }
+    }
+
+    .bottom-section {
+      #signature {
+        line-height: 5px;
+        padding-top: 5px;
+        border-top: solid 1px orange;
+
+        p:first-child {
+          font-weight: 700;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and(min-width: 600px) and (max-width: 823px) {
+  .section-content-container {
+    font-size: 15px;
+
+    .top-section {
+      .hero-image {
         width: 100%;
       }
     }
@@ -31,30 +64,53 @@
 
 
 
+@media only screen and(min-width: 823px) {
 
-
-
-@media only screen and(min-width: 600px) and (max-width: 823px) {
-  .section-content-container {
-    font-size: 15px;
-
-    .top-section {
-      .hero-image {
-        width: 40%;
-      }
+  .top-section {
+    .hero-image {
+      width: 40%;
     }
+  }
+  .services-header {
+    grid-area: services-header;
+    padding: 20px;
+  }
 
-    .bottom-section {
-      #signature {
-        line-height: 5px;
-        padding-top: 5px;
-        border-top: solid 1px orange;
+  .service-card {
+    mat-card {
+      padding: 55px;
+      text-align: center;
+      align-self: center;
+      background-color: orange;
 
-        p:first-child {
-          font-weight: 700;
-          font-style: italic;
-        }
-      }
+      min-height: 200px;
+      margin-bottom: 20px;
     }
+  }
+
+  .service-card-0 {
+    grid-area: service-card-0;
+  }
+  .service-card-1 {
+    grid-area: service-card-1;
+  }
+  .service-card-2 {
+    grid-area: service-card-2;
+  }
+  .service-card-3 {
+    grid-area: service-card-3;
+  }
+  .services-container {
+    height: 100%;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: .2fr auto .2fr;
+    grid-template-rows: repeat(5, .25fr);
+    grid-template-areas:
+      '. services-header .'
+      '. service-card-0 .'
+      '. service-card-1 .'
+      '. service-card-2 .'
+      '. service-card-3 .';
   }
 }

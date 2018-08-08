@@ -40,7 +40,7 @@
 
     .top-section {
       .hero-image {
-        width: 40%;
+        width: 100%;
       }
     }
 
@@ -56,5 +56,70 @@
         }
       }
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and(min-width: 823px) {
+
+  .top-section {
+    .hero-image {
+      width: 40%;
+    }
+  }
+  .services-header {
+    grid-area: services-header;
+    padding: 20px;
+  }
+
+  .service-card {
+    mat-card {
+      padding: 55px;
+      text-align: center;
+      align-self: center;
+      background-color: orange;
+
+      min-height: 200px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .service-card-0 {
+    grid-area: service-card-0;
+  }
+  .service-card-1 {
+    grid-area: service-card-1;
+  }
+  .service-card-2 {
+    grid-area: service-card-2;
+  }
+  .service-card-3 {
+    grid-area: service-card-3;
+  }
+  .services-container {
+    height: 100%;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: .2fr auto .2fr;
+    grid-template-rows: repeat(5, .25fr);
+    grid-template-areas:
+      '. services-header .'
+      '. service-card-0 .'
+      '. service-card-1 .'
+      '. service-card-2 .'
+      '. service-card-3 .';
   }
 }
